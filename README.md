@@ -2,111 +2,102 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Up-to-date pricing data for AI models from OpenAI and Anthropic.**
+**Curated pricing data for OpenAI and Anthropic AI models.**
 
-Simple JSON file with pricing for 50+ AI models, updated regularly via automated scraping.
+Simple JSON file with verified pricing for 80+ models. Manually maintained from official sources.
 
-## 🚀 Quick Start
+## 🚀 Usage
 
 ```python
 import requests
 
-PRICING_URL = "https://raw.githubusercontent.com/cylestio/ai-model-pricing/main/latest.json"
+url = "https://raw.githubusercontent.com/cylestio/ai-model-pricing/main/latest.json"
+pricing = requests.get(url).json()
 
-pricing = requests.get(PRICING_URL).json()
-
-# Get price for a model
-gpt4o = pricing['models']['openai']['gpt-4o']
-print(f"GPT-4o: ${gpt4o['input']}/1M input, ${gpt4o['output']}/1M output")
+# Get model price
+model = pricing['models']['openai']['gpt-4o']
+print(f"${model['input']}/1M input, ${model['output']}/1M output")
 
 # Calculate cost
-def calculate_cost(model_name, input_tokens, output_tokens):
-    for provider in pricing['models'].values():
-        if model_name in provider:
-            model = provider[model_name]
-            return (input_tokens / 1_000_000) * model['input'] + \
-                   (output_tokens / 1_000_000) * model['output']
-    return None
+def calc_cost(model_name, input_tokens, output_tokens):
+    for models in pricing['models'].values():
+        if model_name in models:
+            m = models[model_name]
+            return (input_tokens/1_000_000)*m['input'] + (output_tokens/1_000_000)*m['output']
 
-cost = calculate_cost("gpt-4o", 1500, 500)
+cost = calc_cost("gpt-4o", 1500, 500)
 print(f"Cost: ${cost:.6f}")
 ```
 
-## 📦 Direct Access
+## 📦 What's Included
 
-**Raw JSON URL:**
+**Anthropic (16 models)**
+- Latest: Claude Sonnet 4.5, Haiku 4.5, Opus 4.1
+- Legacy: Claude 4, 3.7, 3.5, 3
+
+**OpenAI (66 models)**
+- Latest: GPT-5 series, GPT-4.1, GPT-4o, o3/o4 series
+- Legacy: GPT-4 Turbo, o1 series, GPT-3.5
+
+All prices in **USD per 1M tokens**.
+
+## 🔗 Access
+
+**Direct JSON:**
 ```
 https://raw.githubusercontent.com/cylestio/ai-model-pricing/main/latest.json
 ```
 
-**CDN (faster, with caching):**
+**CDN (faster):**
 ```
 https://cdn.jsdelivr.net/gh/cylestio/ai-model-pricing@main/latest.json
 ```
 
-## 📊 Available Models
-
-- **OpenAI**: GPT-4o, GPT-4 Turbo, GPT-3.5, o1 series (40+ variants)
-- **Anthropic**: Claude Sonnet 4, Claude Opus 4, Claude Haiku 3.5 (10+ variants)
-- All prices in **USD per 1 million tokens**
-
-## 📁 Data Format
+## 📁 Format
 
 ```json
 {
-  "last_updated": "2025-11-19T00:00:00+00:00",
+  "last_updated": "2025-11-20T00:00:00+00:00",
   "models": {
-    "openai": {
-      "gpt-4o": {
-        "input": 2.50,
-        "output": 10.00,
-        "description": "GPT-4o"
+    "anthropic": {
+      "claude-sonnet-4-5-20250929": {
+        "input": 3.0,
+        "output": 15.0,
+        "description": "Claude Sonnet 4.5"
       }
     },
-    "anthropic": {
-      "claude-sonnet-4-20250514": {
-        "input": 3.00,
-        "output": 15.00,
-        "description": "Claude Sonnet 4"
+    "openai": {
+      "gpt-4o": {
+        "input": 2.5,
+        "output": 10.0,
+        "description": "GPT-4o"
       }
     }
   },
   "sources": {
-    "openai": "https://platform.openai.com/docs/pricing",
-    "anthropic": "https://docs.anthropic.com/en/docs/about-claude/models"
+    "anthropic": "https://claude.com/pricing#api",
+    "openai": "https://platform.openai.com/docs/pricing"
   }
 }
 ```
 
-## 🛠️ Run Locally
+## 🤖 For AI Agents
 
-```bash
-# Install dependencies
-pip install -r script/requirements.txt
+See **[MANUAL_UPDATE_GUIDE.md](MANUAL_UPDATE_GUIDE.md)** for update instructions.
 
-# Optional: For OpenAI Cloudflare bypass
-pip install cloudscraper
+**Quick prompt:**
+```
+Update latest.json per MANUAL_UPDATE_GUIDE.md
 
-# Fetch latest pricing
-python3 script/fetch_pricing.py
+Sources:
+- Claude: https://claude.com/pricing#api
+- OpenAI: https://platform.openai.com/docs/pricing
 ```
 
-## 📝 How It Works
+## 📝 Data Sources
 
-1. Script scrapes pricing from official OpenAI and Anthropic pages
-2. Validates and compares with existing data
-3. Updates `latest.json` if changes detected
-4. Falls back to existing data if scraping fails
-
-**Note**: OpenAI blocks automated requests (Cloudflare). Use `cloudscraper` or run manually.
-
-## 🤝 Contributing
-
-Found incorrect pricing? Open an issue or submit a PR updating `latest.json`.
-
-## ⚠️ Disclaimer
-
-Unofficial project. Data scraped from public sources and provided as-is. No warranty. Always verify with official sources.
+- **Claude**: [Pricing](https://claude.com/pricing#api) • [Models](https://platform.claude.com/docs/en/about-claude/models/overview)
+- **OpenAI**: [Pricing](https://platform.openai.com/docs/pricing)
 
 ## 📜 License
 
@@ -114,4 +105,4 @@ MIT License - See [LICENSE](LICENSE)
 
 ---
 
-**Data Sources**: [OpenAI Pricing](https://platform.openai.com/docs/pricing) • [Anthropic Models](https://docs.anthropic.com/en/docs/about-claude/models)
+*Manually curated • No warranty • Verify with official sources*

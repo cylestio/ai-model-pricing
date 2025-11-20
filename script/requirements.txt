@@ -1,6 +1,0 @@
-requests==2.31.0
-beautifulsoup4==4.12.3
-
-# Optional: For bypassing Cloudflare protection on OpenAI's pricing page
-# cloudscraper>=1.2.71
-
