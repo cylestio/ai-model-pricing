@@ -1,7 +1,17 @@
 {
-  "last_updated": "2025-11-20T10:08:19+00:00",
+  "last_updated": "2025-12-01T10:48:00+00:00",
   "models": {
     "anthropic": {
+      "claude-opus-4-5-20251101": {
+        "description": "Claude Opus 4.5",
+        "input": 5.0,
+        "output": 25.0
+      },
+      "claude-opus-4-5": {
+        "description": "Claude Opus 4.5 (latest)",
+        "input": 5.0,
+        "output": 25.0
+      },
       "claude-sonnet-4-5-20250929": {
         "description": "Claude Sonnet 4.5",
         "input": 3.0,
@@ -23,12 +33,12 @@
         "output": 5.0
       },
       "claude-opus-4-1-20250805": {
-        "description": "Claude Opus 4.1",
+        "description": "Claude Opus 4.1 (legacy)",
         "input": 15.0,
         "output": 75.0
       },
       "claude-opus-4-1": {
-        "description": "Claude Opus 4.1 (latest)",
+        "description": "Claude Opus 4.1 (legacy)",
         "input": 15.0,
         "output": 75.0
       },
@@ -164,33 +174,8 @@
         "input": 5.0,
         "output": 15.0
       },
-      "gpt-4o-2024-08-06": {
-        "description": "GPT-4o (2024-08-06)",
-        "input": 2.5,
-        "output": 10.0
-      },
-      "gpt-4o-2024-11-20": {
-        "description": "GPT-4o (2024-11-20)",
-        "input": 2.5,
-        "output": 10.0
-      },
       "gpt-4o-mini": {
         "description": "GPT-4o Mini",
-        "input": 0.15,
-        "output": 0.6
-      },
-      "gpt-4o-mini-2024-07-18": {
-        "description": "GPT-4o Mini (2024-07-18)",
-        "input": 0.15,
-        "output": 0.6
-      },
-      "gpt-4o-audio-preview": {
-        "description": "GPT-4o Audio Preview",
-        "input": 2.5,
-        "output": 10.0
-      },
-      "gpt-4o-mini-audio-preview": {
-        "description": "GPT-4o Mini Audio Preview",
         "input": 0.15,
         "output": 0.6
       },
@@ -203,6 +188,16 @@
         "description": "GPT-4o Mini Realtime Preview",
         "input": 0.6,
         "output": 2.4
+      },
+      "gpt-4o-audio-preview": {
+        "description": "GPT-4o Audio Preview",
+        "input": 2.5,
+        "output": 10.0
+      },
+      "gpt-4o-mini-audio-preview": {
+        "description": "GPT-4o Mini Audio Preview",
+        "input": 0.15,
+        "output": 0.6
       },
       "gpt-4o-search-preview": {
         "description": "GPT-4o Search Preview",
@@ -259,21 +254,6 @@
         "input": 1.1,
         "output": 4.4
       },
-      "o1-mini-2024-09-12": {
-        "description": "o1 Mini (2024-09-12)",
-        "input": 1.1,
-        "output": 4.4
-      },
-      "o1-preview": {
-        "description": "o1 Preview",
-        "input": 15.0,
-        "output": 60.0
-      },
-      "o1-preview-2024-09-12": {
-        "description": "o1 Preview (2024-09-12)",
-        "input": 15.0,
-        "output": 60.0
-      },
       "o3": {
         "description": "o3",
         "input": 2.0,
@@ -329,14 +309,14 @@
         "input": 0.5,
         "output": 1.5
       },
-      "gpt-3.5-turbo-0613": {
-        "description": "GPT-3.5 Turbo 0613 (legacy)",
-        "input": 1.5,
-        "output": 2.0
-      },
       "gpt-3.5-turbo-1106": {
         "description": "GPT-3.5 Turbo 1106 (legacy)",
         "input": 1.0,
+        "output": 2.0
+      },
+      "gpt-3.5-turbo-0613": {
+        "description": "GPT-3.5 Turbo 0613 (legacy)",
+        "input": 1.5,
         "output": 2.0
       },
       "gpt-3.5-0301": {
@@ -353,56 +333,6 @@
         "description": "GPT-3.5 Turbo 16K 0613 (legacy)",
         "input": 3.0,
         "output": 4.0
-      },
-      "gpt-4": {
-        "description": "GPT-4 (legacy)",
-        "input": 30.0,
-        "output": 60.0
-      },
-      "gpt-4-0125-preview": {
-        "description": "GPT-4 0125 Preview (legacy)",
-        "input": 10.0,
-        "output": 30.0
-      },
-      "gpt-4-0314": {
-        "description": "GPT-4 0314 (legacy)",
-        "input": 30.0,
-        "output": 60.0
-      },
-      "gpt-4-0613": {
-        "description": "GPT-4 0613 (legacy)",
-        "input": 30.0,
-        "output": 60.0
-      },
-      "gpt-4-1106-preview": {
-        "description": "GPT-4 1106 Preview (legacy)",
-        "input": 10.0,
-        "output": 30.0
-      },
-      "gpt-4-1106-vision-preview": {
-        "description": "GPT-4 Vision 1106 Preview (legacy)",
-        "input": 10.0,
-        "output": 30.0
-      },
-      "gpt-4-32k": {
-        "description": "GPT-4 32K (legacy)",
-        "input": 60.0,
-        "output": 120.0
-      },
-      "gpt-4-turbo": {
-        "description": "GPT-4 Turbo (legacy)",
-        "input": 10.0,
-        "output": 30.0
-      },
-      "gpt-4-turbo-2024-04-09": {
-        "description": "GPT-4 Turbo 2024-04-09 (legacy)",
-        "input": 10.0,
-        "output": 30.0
-      },
-      "gpt-4-turbo-preview": {
-        "description": "GPT-4 Turbo Preview (legacy)",
-        "input": 10.0,
-        "output": 30.0
       },
       "davinci-002": {
         "description": "Davinci-002 (legacy)",
