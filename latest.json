@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-01T10:48:00+00:00",
+  "last_updated": "2026-01-01T08:21:23+00:00",
   "models": {
     "anthropic": {
       "claude-opus-4-5-20251101": {
@@ -94,6 +94,11 @@
       }
     },
     "openai": {
+      "gpt-5.2": {
+        "description": "GPT-5.2",
+        "input": 1.75,
+        "output": 14.0
+      },
       "gpt-5.1": {
         "description": "GPT-5.1",
         "input": 1.25,
@@ -114,6 +119,11 @@
         "input": 0.05,
         "output": 0.4
       },
+      "gpt-5.2-chat-latest": {
+        "description": "GPT-5.2 Chat (latest)",
+        "input": 1.75,
+        "output": 14.0
+      },
       "gpt-5.1-chat-latest": {
         "description": "GPT-5.1 Chat (latest)",
         "input": 1.25,
@@ -121,6 +131,11 @@
       },
       "gpt-5-chat-latest": {
         "description": "GPT-5 Chat (latest)",
+        "input": 1.25,
+        "output": 10.0
+      },
+      "gpt-5.1-codex-max": {
+        "description": "GPT-5.1 Codex Max",
         "input": 1.25,
         "output": 10.0
       },
@@ -138,6 +153,11 @@
         "description": "GPT-5.1 Codex Mini",
         "input": 0.25,
         "output": 2.0
+      },
+      "gpt-5.2-pro": {
+        "description": "GPT-5.2 Pro",
+        "input": 21.0,
+        "output": 168.0
       },
       "gpt-5-pro": {
         "description": "GPT-5 Pro",
@@ -168,6 +188,11 @@
         "description": "GPT-4o",
         "input": 2.5,
         "output": 10.0
+      },
+      "gpt-4o-2024-08-06": {
+        "description": "GPT-4o (2024-08-06)",
+        "input": 5.0,
+        "output": 15.0
       },
       "gpt-4o-2024-05-13": {
         "description": "GPT-4o (2024-05-13)",
@@ -228,6 +253,16 @@
         "description": "GPT Audio Mini",
         "input": 0.6,
         "output": 2.4
+      },
+      "gpt-image-1.5": {
+        "description": "GPT Image 1.5",
+        "input": 5.0,
+        "output": 10.0
+      },
+      "chatgpt-image-latest": {
+        "description": "ChatGPT Image (latest)",
+        "input": 5.0,
+        "output": 10.0
       },
       "gpt-image-1": {
         "description": "GPT Image 1",
