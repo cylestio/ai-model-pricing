@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-01T08:21:23+00:00",
+  "last_updated": "2026-02-04T12:00:00+00:00",
   "models": {
     "anthropic": {
       "claude-opus-4-5-20251101": {
@@ -133,6 +133,11 @@
         "description": "GPT-5 Chat (latest)",
         "input": 1.25,
         "output": 10.0
+      },
+      "gpt-5.2-codex": {
+        "description": "GPT-5.2 Codex",
+        "input": 1.75,
+        "output": 14.0
       },
       "gpt-5.1-codex-max": {
         "description": "GPT-5.1 Codex Max",
@@ -333,6 +338,41 @@
         "description": "ChatGPT-4o (latest, legacy)",
         "input": 5.0,
         "output": 15.0
+      },
+      "gpt-4-turbo-2024-04-09": {
+        "description": "GPT-4 Turbo 2024-04-09 (legacy)",
+        "input": 10.0,
+        "output": 30.0
+      },
+      "gpt-4-0125-preview": {
+        "description": "GPT-4 0125 Preview (legacy)",
+        "input": 10.0,
+        "output": 30.0
+      },
+      "gpt-4-1106-preview": {
+        "description": "GPT-4 1106 Preview (legacy)",
+        "input": 10.0,
+        "output": 30.0
+      },
+      "gpt-4-1106-vision-preview": {
+        "description": "GPT-4 1106 Vision Preview (legacy)",
+        "input": 10.0,
+        "output": 30.0
+      },
+      "gpt-4-0613": {
+        "description": "GPT-4 0613 (legacy)",
+        "input": 30.0,
+        "output": 60.0
+      },
+      "gpt-4-0314": {
+        "description": "GPT-4 0314 (legacy)",
+        "input": 30.0,
+        "output": 60.0
+      },
+      "gpt-4-32k": {
+        "description": "GPT-4 32K (legacy)",
+        "input": 60.0,
+        "output": 120.0
       },
       "gpt-3.5-turbo": {
         "description": "GPT-3.5 Turbo (legacy)",
